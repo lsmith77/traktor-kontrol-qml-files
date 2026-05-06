@@ -1,5 +1,5 @@
-// Returns a short effect name to be shown on X1MK3 screens
-function effectName(effect)
+// Returns a short effect name to be shown on small screens
+function shortEffectName(effect)
 {
   switch (effect.toString())
   {
@@ -137,8 +137,8 @@ function effectName(effect)
   }
 }
 
-// Returns a short effect parameter name to be shown on X1MK3 screens
-function parameterName(effect, knob)
+// Returns a short effect parameter name to be shown on small screens
+function shortParameterName(effect, knob)
 {
   switch (effect.toString())
   {

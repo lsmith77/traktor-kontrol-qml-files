@@ -1,12 +1,11 @@
 import CSI 1.0
 import QtQuick 2.0
 
+import "../Widgets" as Widgets
+
 Item {
   id: screen
 
-  property int side: ScreenSide.Left;
-
-  property string settingsPath: ""
   property string propertiesPath: ""
 
   width:  128
@@ -163,7 +162,7 @@ Item {
               fillMode:  Image.PreserveAspectFit
           }
 
-          ThinText {
+          Widgets.ThinText {
             id: volumeText
             anchors {
                 bottom: parent.bottom
@@ -192,7 +191,7 @@ Item {
             width: 12
             height: 55
 
-            ThinText {
+            Widgets.ThinText {
               anchors {
                   top: parent.top
                   right: parent.right
@@ -235,7 +234,7 @@ Item {
             width: 12
             height: 55
 
-            ThinText {
+            Widgets.ThinText {
               anchors {
                   top: parent.top
                   right: parent.right
@@ -294,7 +293,7 @@ Item {
             width: 12
             height: 55
 
-            ThinText {
+            Widgets.ThinText {
               anchors {
                   top: parent.top
                   right: parent.right
@@ -353,7 +352,7 @@ Item {
             width: 12
             height: 55
 
-            ThinText {
+            Widgets.ThinText {
               anchors {
                   top: parent.top
                   right: parent.right
@@ -418,7 +417,7 @@ Item {
             width: 46
             height: 12
 
-            ThinText {
+            Widgets.ThinText {
               anchors {
                   bottom: parent.bottom
                   left: parent.left
@@ -462,7 +461,7 @@ Item {
             width: 46
             height: 12
 
-            ThinText {
+            Widgets.ThinText {
               anchors {
                   bottom: parent.bottom
                   left: parent.left
@@ -506,7 +505,7 @@ Item {
             width: 46
             height: 12
 
-            ThinText {
+            Widgets.ThinText {
               anchors {
                   bottom: parent.bottom
                   left: parent.left
@@ -550,7 +549,7 @@ Item {
             width: 46
             height: 12
 
-            ThinText {
+            Widgets.ThinText {
               anchors {
                   bottom: parent.bottom
                   left: parent.left
@@ -593,7 +592,7 @@ Item {
         visible: knobsAreActive
         anchors.fill: parent
 
-        ThinText {
+        Widgets.ThinText {
             anchors {
                 bottom: parent.bottom
                 left: parent.left
@@ -604,7 +603,7 @@ Item {
             text: " " + parameterName(lastTouchedKnob)
         }
 
-        ThinText {
+        Widgets.ThinText {
             id: valueText
 
             anchors {

@@ -2,14 +2,11 @@ import CSI 1.0
 import QtQuick 2.0
 
 import "../../CSI/X1MK3/Defines"
+import "../Widgets" as Widgets
 
 Item {
   id: screen
 
-  // side is unused but needed for compatibility
-  property int side: ScreenSide.Left;
-
-  property string settingsPath: ""
   property string propertiesPath: ""
 
   width:  128
@@ -68,7 +65,7 @@ Item {
       visible: (deviceSetupState == DeviceSetupState.assigned) &&
                ((fxSectionLayer.value == FXSectionLayer.fx_primary) || (fxSectionLayer.value == FXSectionLayer.fx_secondary))
 
-      ThinText {
+      Widgets.ThinText {
           anchors {
               top: parent.top
               left: parent.left
@@ -127,7 +124,7 @@ Item {
       visible: (deviceSetupState == DeviceSetupState.assigned) &&
                (fxSectionLayer.value == FXSectionLayer.mixer)
 
-      ThinText {
+      Widgets.ThinText {
           anchors {
               top: parent.top
               left: parent.left
@@ -248,7 +245,7 @@ Item {
       anchors.fill: parent
       visible: deviceSetupState == DeviceSetupState.unassigned
   
-      ThinText {
+      Widgets.ThinText {
           anchors.fill: parent
           text: "DEVICE SETUP"
           horizontalAlignment: Text.AlignHCenter
@@ -262,7 +259,7 @@ Item {
       anchors.fill: parent
       visible: deviceSetupState == DeviceSetupState.just_assigned
   
-      ThinText {
+      Widgets.ThinText {
           anchors.fill: parent
           text: "¢"
           font.pixelSize: 60

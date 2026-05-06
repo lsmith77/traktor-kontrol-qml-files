@@ -22,7 +22,7 @@ Module
   Wire { from: surface_prefix + "eq.high";              to: DirectPropertyAdapter { path: app_prefix + "eq.high"        } }
   Wire { from: surface_prefix + "eq.mid";               to: DirectPropertyAdapter { path: app_prefix + "eq.mid"         } }
   Wire { from: surface_prefix + "eq.low";               to: DirectPropertyAdapter { path: app_prefix + "eq.low"         } }
-  Wire { from: surface_prefix + "cue";                  to: TogglePropertyAdapter { path: app_prefix + "cue"            } }
+  Wire { from: surface_prefix + "cue";                  to: TogglePropertyAdapter { path: app_prefix + "cue"; color: Color.Blue } }
   Wire { from: surface_prefix + "deck_fx_assign.1";     to: TogglePropertyAdapter { path: app_prefix + "fx.assign.1"; color: fxUnit1Type.value == FxType.PatternPlayer ? Color.Mint : Color.LightOrange } }
   Wire { from: surface_prefix + "deck_fx_assign.2";     to: TogglePropertyAdapter { path: app_prefix + "fx.assign.2"; color: fxUnit2Type.value == FxType.PatternPlayer ? Color.Mint : Color.LightOrange } }
 }

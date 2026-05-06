@@ -1,16 +1,13 @@
 import CSI 1.0
 import QtQuick 2.0
 
+import "../Widgets" as Widgets
 import "../Defines" as Defines
 import "../../CSI/X1MK3/Defines"
-import "Scripts/DisplayHelpers.js" as DisplayHelpers
 
 Item {
   id: screen
 
-  property int side: ScreenSide.Left;
-
-  property string settingsPath: ""
   property string propertiesPath: ""
 
   width:  128
@@ -91,7 +88,7 @@ Item {
         anchors.fill: parent
 
         // Track title
-        ThickText {
+        Widgets.ThickText {
             visible: !shift
 
             anchors {
@@ -105,7 +102,7 @@ Item {
         }
 
         // Remaining/Elapsed Time
-        ThinText {
+        Widgets.ThinText {
             visible: (deckDisplayMainInfo != loopSizeInfo) && !shift
 
             anchors {
@@ -120,7 +117,7 @@ Item {
         }
 
         // Loop headline
-        ThickText {
+        Widgets.ThickText {
             visible: shift && loopShiftAction == beatjump_loop
 
             anchors {
@@ -147,7 +144,7 @@ Item {
           height: 35
           color: loopActiveProp.value ? "white" : "black"
 
-          ThinText {
+          Widgets.ThinText {
               anchors.fill: parent 
               font.pixelSize: 48
               font.capitalization: Font.AllUppercase
@@ -173,7 +170,7 @@ Item {
           width: 32
           height: 19
 
-          ThinText {
+          Widgets.ThinText {
               anchors.fill: parent
               anchors.rightMargin: 7
               font.pixelSize: 24
@@ -199,7 +196,7 @@ Item {
           height: 35
           color: "black"
 
-          ThinText {
+          Widgets.ThinText {
               anchors.fill: parent 
               font.pixelSize: 48
               horizontalAlignment: Text.AlignHCenter
@@ -224,7 +221,7 @@ Item {
           width: 32
           height: 19
 
-          ThinText {
+          Widgets.ThinText {
               anchors.fill: parent
               anchors.rightMargin: 7
               font.pixelSize: 24
@@ -251,7 +248,7 @@ Item {
           width: 32
           height: 19
 
-          ThinText {
+          Widgets.ThinText {
               anchors.fill: parent
               anchors.rightMargin: 7
               font.pixelSize: 24
@@ -270,7 +267,7 @@ Item {
         anchors.fill: parent
 
         // Loop headline
-        ThickText {
+        Widgets.ThickText {
             anchors {
                 top: parent.top
                 left: parent.left
@@ -293,7 +290,7 @@ Item {
           height: 35
           color: loopActiveProp.value ? "white" : "black"
 
-          ThinText {
+          Widgets.ThinText {
               anchors.fill: parent 
               font.pixelSize: 48
               font.capitalization: Font.AllUppercase
@@ -322,7 +319,7 @@ Item {
           height: 35
           color: "black"
 
-          ThinText {
+          Widgets.ThinText {
               anchors.fill: parent 
               font.pixelSize: 48
               font.capitalization: Font.AllUppercase
@@ -371,7 +368,7 @@ Item {
       visible: (deviceSetupState == DeviceSetupState.assigned) && (deckTypeProp.value == DeckType.Live)
       anchors.fill: parent
 
-      ThinText {
+      Widgets.ThinText {
           anchors.fill: parent
           text: "LIVE INPUT"
           horizontalAlignment: Text.AlignHCenter
@@ -396,7 +393,7 @@ Item {
         width: 44
         height: 44
 
-        ThinText {
+        Widgets.ThinText {
           anchors {
             top: parent.top
             left: parent.left

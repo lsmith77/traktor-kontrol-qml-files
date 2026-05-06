@@ -19,7 +19,7 @@ import './Widgets/' as Widgets
 Item {
   id: screen
 
-  property int side: ScreenSide.Left;
+  property int side: ScreenSide.Left
   readonly property bool isLeftScreen: (screen.side == ScreenSide.Left)
 
   property string settingsPath: ""

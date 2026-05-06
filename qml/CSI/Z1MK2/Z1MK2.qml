@@ -89,7 +89,7 @@ Mapping
   Wire { from: "surface.center.cue_mix";            to: DirectPropertyAdapter { path: "app.traktor.mixer.cue.mix"         } }
   Wire { from: "surface.center.cue_vol";            to: DirectPropertyAdapter { path: "app.traktor.mixer.cue.volume"      } }
 
-  KontrolScreen { name: "main_screen"; side: ScreenSide.Left; propertiesPath: mapping.propertiesPath; flavor: ScreenFlavor.Z1MK2_Main }
+  KontrolScreen { name: "main_screen"; propertiesPath: mapping.propertiesPath; flavor: ScreenFlavor.Z1MK2_Main }
   Wire { from: "main_screen.output"; to: "surface.display.mode" }
 
   // Shift

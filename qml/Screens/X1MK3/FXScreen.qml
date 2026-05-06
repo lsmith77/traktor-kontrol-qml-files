@@ -2,14 +2,12 @@ import CSI 1.0
 import QtQuick 2.0
 
 import "../../CSI/X1MK3/Defines"
-import "Scripts/DisplayHelpers.js" as DisplayHelpers
+import "../Widgets" as Widgets
+import "../Scripts/SmallDisplayHelpers.js" as DisplayHelpers
 
 Item {
   id: screen
 
-  property int side: ScreenSide.Left;
-
-  property string settingsPath: ""
   property string propertiesPath: ""
 
   width:  128
@@ -153,9 +151,9 @@ Item {
             switch(knob)
             {
               case 1: return "D/W";
-              case 2: return DisplayHelpers.effectName(fxSelect1.description);
-              case 3: return DisplayHelpers.effectName(fxSelect2.description);
-              case 4: return DisplayHelpers.effectName(fxSelect3.description);
+              case 2: return DisplayHelpers.shortEffectName(fxSelect1.description);
+              case 3: return DisplayHelpers.shortEffectName(fxSelect2.description);
+              case 4: return DisplayHelpers.shortEffectName(fxSelect3.description);
             }
 
             break;
@@ -163,7 +161,7 @@ Item {
 
           case FxType.Single:
           {
-            return DisplayHelpers.parameterName(fxSelect1.description, knob);
+            return DisplayHelpers.shortParameterName(fxSelect1.description, knob);
           }
 
           case FxType.PatternPlayer:
@@ -172,7 +170,7 @@ Item {
             {
               case 1: return "VOL";
               case 2: return "PTRN";
-              case 3: return "PTCH";
+              case 3: return "PTC";
               case 4: return "DCAY";
             }
 
@@ -250,7 +248,7 @@ Item {
       anchors.fill: parent
 
       // Single/Group Fx Title
-      ThickText {
+      Widgets.ThickText {
         visible: isSingleGroupFx
 
         anchors {
@@ -266,7 +264,7 @@ Item {
       }
 
       // Pattern Player Kit
-      ThickText {
+      Widgets.ThickText {
         visible: isPatternPlayer
 
         anchors {
@@ -282,7 +280,7 @@ Item {
       }
 
       // Pattern Player Sound
-      ThickText {
+      Widgets.ThickText {
         visible: isPatternPlayer
 
         anchors {
@@ -359,7 +357,7 @@ Item {
           visible: fxSectionLayer == FXSectionLayer.mixer && deckCue.value
         }
 
-        ThinText {
+        Widgets.ThinText {
             anchors {
                 bottom: parent.bottom
                 left: parent.left
@@ -370,7 +368,7 @@ Item {
             text: " " + (hasParameter(lastTouchedKnob) ? parameterName(lastTouchedKnob) : "EMPTY")
         }
 
-        ThinText {
+        Widgets.ThinText {
             id: valueText
 
             anchors {
@@ -411,7 +409,7 @@ Item {
         width: 120
         height: 44
 
-        ThinText {
+        Widgets.ThinText {
           anchors {
             top: parent.top
             left: parent.left

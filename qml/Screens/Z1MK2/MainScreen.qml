@@ -1,13 +1,11 @@
 import CSI 1.0
 import QtQuick 2.0
 
+import "../Widgets" as Widgets
+
 Item {
   id: screen
 
-  // side is unused but needed for compatibility
-  property int side: ScreenSide.Left
-
-  property string settingsPath: ""
   property string propertiesPath: ""
 
   width:  128
@@ -133,7 +131,7 @@ Item {
         visible: decksMixerFx[leftDeckIdx - 1] != decksMixerFx[rightDeckIdx - 1]
         anchors.fill: parent
 
-        ThinText {
+        Widgets.ThinText {
             anchors {
                 top: parent.top
                 left: parent.left
@@ -146,7 +144,7 @@ Item {
             text: " " + decksMixerFxNames[leftDeckIdx - 1]
         }
 
-        ThinText {
+        Widgets.ThinText {
             anchors {
                 right: parent.right
                 bottom: parent.bottom

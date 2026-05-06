@@ -25,7 +25,7 @@ Mapping
   }
 
 
-  KontrolScreen { name: "screen"; side: ScreenSide.Left; propertiesPath: mapping.propertiesPath; flavor: ScreenFlavor.X1MK3_Mode }
+  KontrolScreen { name: "screen"; propertiesPath: mapping.propertiesPath; flavor: ScreenFlavor.X1MK3_Mode }
   Wire { from: "screen.output"; to: "surface.display.mode" }
 
   // Settings
